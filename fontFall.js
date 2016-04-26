@@ -14,29 +14,19 @@ function welcomeUI() {
     window.onclick = function (e) {
         var evt = e || window.event;
         welcomeText.innerHTML = '';
-        var boolean = false;
-        var value = textFlow(boolean);
-        console.log(textFlow(boolean))
-        if (value) {
-            alert('Success!');
-        }
+        textFlow();
     }
 }
 
-function textFlow(boolean) {
+function textFlow() {
     var counter = 0;
     var id = window.setInterval(function () {
         new Fontfall();
         ++counter;
-        boolean = false;
-        if (counter > 50) {
-            boolean = true;
-            // console.log(boolean);
+        if (counter > 500) {
             clearInterval(id);
-            return boolean;
         }
-    }, 10);
-    // console.log(boolean)
+    }, 50);
 
 }
 
